@@ -28,8 +28,8 @@ $(function () {
       $.ajax({
         url: `https://api.github.com/users/${e.target.value}`,
         data: {
-          client_id: "2987b1bab87b8a18c3e5",
-          client_secret: "5454b39ef8f9f39c241f66586c9c457c6941d41d",
+          client_id: process.env.GIT_CLIENT_ID,
+          client_secret: process.env.GIT_CLIENT_SECRET,
         },
         error: function (err) {
           alert(`${err.status} ${err.responseJSON.message}`);
